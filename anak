@@ -1,0 +1,32 @@
+#include <Keypad.h>
+
+
+const byte numRows= 4; 
+  
+  const byte numCols= 3;
+
+  char keymap[numRows][numCols]=
+  {
+    {'1','2','3'},
+    {'4','5','6'},
+    {'7','8','9'},
+    {'.','0','#'}    
+  };
+
+
+  byte rowPins[numRows] = {'9',"10","11","12"};
+
+  byte colPins[numCols] = {"15","16","17"};
+  Keypad myKeypad = Keypad(makeKeymap(keymap), rowPins, colPins, numRows, numCols);
+
+
+void setup() {
+  pinMode(A0, INPUT);
+  digitalWrite(A0, HIGH);
+  pinMode(A1, INPUT);
+  digitalWrite(A1, HIGH);
+  pinMode(A2, INPUT);
+  digitalWrite(A2, HIGH);
+  pinMode(A3, INPUT);
+  digitalWrite(A3, HIGH);
+
